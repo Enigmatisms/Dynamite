@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",        
+            "includePath": [
+                "/usr/local/include",
+                "/usr/local/cuda-11.6/include/**",
+                "${workspaceFolder}/vulkan_learn/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+  }

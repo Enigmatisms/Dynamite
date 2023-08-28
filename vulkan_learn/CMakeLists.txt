@@ -62,16 +62,20 @@ add_compile_options(-Wno-deprecated-declarations -mavx2 -mfma)
 
 include_directories(
     .
-    ./vulkan_learn/include
+    ./include
     /usr/local/include/
 )
 
 link_directories(/usr/local/lib)
 
-add_executable(hello ./vulkan_learn/hello_vuld.cc
-    # ${SRC}
+aux_source_directory(
+    ./src SRC
 )
-target_link_libraries(hello ${OPENGL_gl_LIBRARY} ${GLFW3_LIBRARY} glfw)
+
+add_executable(hello ./hello_vuld.cc
+    ${SRC}
+)
+target_link_libraries(hello ${OPENGL_gl_LIBRARY} ${GLFW3_LIBRARY} glfw vulkan)
 # target_link_libraries(hello
 #     stdc++fs
 # )
