@@ -45,19 +45,20 @@ private:
     void main_loop();
 
     /// can be thought of as a customized deconstructor 
-    void clean_up() {
-        glfwDestroyWindow(window);
-        glfwTerminate();
-        vkDestroyInstance(instance, nullptr);
-    }
-
+    void clean_up();
+    
     void show_supported_exts() const;
 
     /// customized instance creation
     void create_instance();
 
+    void setup_debug_messenger();
+
+    std::vector<const char*> HelloTriangleApplication::get_required_extensions() const;
+
     bool check_validation_layer_support(bool verbose = false) const;
 private:
     GLFWwindow* window;
     VkInstance instance;
+    VkDebugUtilsMessengerEXT debug_messenger;
 };
